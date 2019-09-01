@@ -59,9 +59,32 @@ public class Player {
         if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_ESCAPE)) {
         	State.setState(handler.getGame().pauseState);
         }
-        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_N)) {
-        	State.setState(handler.getGame().gameOverState);
+        
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_P)) {
+        	movePerTick--;
         }
+        
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_M)) {
+        	movePerTick++;
+        }
+        
+        
+        
+//        for(int i = 0 ; i < handler.getWorld().body.size(); i++) {
+        	
+        	
+//        if(		(handler.getWorld().player.xCoord==handler.getWorld().body.get(i).x)
+//        		&& (handler.getWorld().player.yCoord==handler.getWorld().body.get(i).y)) {
+//        	State.setState(handler.getGame().gameOverState);
+//        }
+        	
+        	
+//        	if(handler.getWorld().playerLocation[handler.getWorld().body.getLast().x][handler.getWorld().body.getLast().y]) {
+//        		State.setState(handler.getGame().gameOverState);
+//        	}
+//        	
+        	
+//        }
 
     }
 
