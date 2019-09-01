@@ -6,13 +6,18 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.util.Random;
 
+import Game.GameStates.State;
+
 /**
  * Created by AlexVR on 7/2/2018.
  */
 public class Player {
 
     public int lenght;
+    
     public boolean justAte;
+    public int score;
+    
     private Handler handler;
 
     public int xCoord;
@@ -32,6 +37,7 @@ public class Player {
         justAte = false;
         lenght= 1;
         movePerTick = 5;
+        score=0;
 
     }
 
@@ -49,6 +55,12 @@ public class Player {
             direction="Left";
         }if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_RIGHT)){
             direction="Right";
+        }
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_ESCAPE)) {
+        	State.setState(handler.getGame().pauseState);
+        }
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_N)) {
+        	State.setState(handler.getGame().gameOverState);
         }
 
     }
@@ -117,7 +129,12 @@ public class Player {
 
             }
         }
-
+        
+        g.setColor(Color.BLACK);
+        g.fillRect(0, 780, 1000, 50);
+    
+        g.setColor(Color.WHITE);
+        g.drawString("Score: " + score, 10, 800);
 
     }
 
@@ -128,6 +145,10 @@ public class Player {
     	
     	//Prevent bugs
     	if(movePerTick<2) {movePerTick=2;}
+    	
+    	//add score
+    	//Student ID = 5. Additive = 6.
+    	score = score+6;
     	
     	
         lenght++;

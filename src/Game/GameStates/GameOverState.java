@@ -12,11 +12,11 @@ import java.awt.*;
 /**
  * Created by AlexVR on 7/1/2018.
  */
-public class MenuState extends State {
+public class GameOverState extends State {
 
     private UIManager uiManager;
 
-    public MenuState(Handler handler) {
+    public GameOverState(Handler handler) {
         super(handler);
         uiManager = new UIManager(handler);
         handler.getMouseManager().setUimanager(uiManager);
@@ -43,7 +43,7 @@ public class MenuState extends State {
     public void render(Graphics g) {
         g.setColor(Color.darkGray);
         g.fillRect(0,0,handler.getWidth(),handler.getHeight());
-        g.drawImage(Images.title,0,0,handler.getWidth(),handler.getHeight(),null);
+        g.drawImage(Images.lost,0,0,handler.getWidth(),handler.getHeight(),null);
         uiManager.Render(g);
 
     }

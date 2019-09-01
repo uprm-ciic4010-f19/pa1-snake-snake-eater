@@ -13,6 +13,7 @@ public class Images {
 
     public static BufferedImage[] butstart;
     public static BufferedImage title;
+    public static BufferedImage lost;
     public static BufferedImage Pause;
     public static BufferedImage[] Resume;
     public static BufferedImage[] BTitle;
@@ -29,6 +30,7 @@ public class Images {
         try {
 
             title = ImageIO.read(getClass().getResourceAsStream("/Sheets/Title.png"));
+            lost = ImageIO.read(getClass().getResourceAsStream("/Sheets/LOST.png"));
             Pause = ImageIO.read(getClass().getResourceAsStream("/Buttons/Pause.png"));
             Resume[0] = ImageIO.read(getClass().getResourceAsStream("/Buttons/Resume.png"));
             Resume[1] = ImageIO.read(getClass().getResourceAsStream("/Buttons/ResumeP.png"));
