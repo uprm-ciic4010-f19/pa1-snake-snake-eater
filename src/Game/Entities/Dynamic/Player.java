@@ -19,6 +19,7 @@ public class Player {
     public int yCoord;
 
     public int moveCounter;
+    public int movePerTick;
 
     public String direction;//is your first name one?
 
@@ -30,12 +31,13 @@ public class Player {
         direction= "Right";
         justAte = false;
         lenght= 1;
+        movePerTick = 5;
 
     }
 
     public void tick(){
         moveCounter++;
-        if(moveCounter>=5) {
+        if(moveCounter>=movePerTick) {
             checkCollisionAndMove();
             moveCounter=0;
         }
@@ -120,6 +122,14 @@ public class Player {
     }
 
     public void Eat(){
+    	
+    	//update Snake speed
+    	movePerTick--;
+    	
+    	//Prevent bugs
+    	if(movePerTick<2) {movePerTick=2;}
+    	
+    	
         lenght++;
         Tail tail= null;
         handler.getWorld().appleLocation[xCoord][yCoord]=false;
