@@ -60,11 +60,11 @@ public class Player {
         	State.setState(handler.getGame().pauseState);
         }
         
-        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_P)) {
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_EQUALS)) {
         	movePerTick--;
         }
         
-        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_M)) {
+        if(handler.getKeyManager().keyJustPressed(KeyEvent.VK_MINUS)) {
         	movePerTick++;
         }
         
