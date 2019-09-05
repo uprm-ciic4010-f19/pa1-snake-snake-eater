@@ -38,8 +38,8 @@ public class DisplayScreen {
         // Purple Color Background
         //rgb(128,0,128)
         
-        Color purple = new Color(128,0,128);
-        frame.setBackground(purple);
+        Color darkgreen = new Color(0,100,0);
+        frame.setBackground(darkgreen);
 
         try {
             frame.setIconImage(ImageIO.read(new File("res/Sheets/icon.png")));
@@ -52,7 +52,7 @@ public class DisplayScreen {
         canvas.setMaximumSize(new Dimension(width, height));
         canvas.setMinimumSize(new Dimension(width, height));
         canvas.setFocusable(false);
-        canvas.setBackground(purple);
+        canvas.setBackground(darkgreen);
 
         frame.add(canvas);
         frame.pack();

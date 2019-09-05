@@ -1,5 +1,7 @@
 package Game.Entities.Static;
 
+import java.awt.Color;
+
 import Main.Handler;
 
 /**
@@ -8,6 +10,11 @@ import Main.Handler;
 public class Apple {
 
     private Handler handler;
+    
+    public boolean isGood;
+    public int goodCounter;
+    
+    public Color appleColor;
 
     public int xCoord;
     public int yCoord;
@@ -16,6 +23,21 @@ public class Apple {
         this.handler=handler;
         this.xCoord=x;
         this.yCoord=y;
+        goodCounter=0;
+        isGood=true;
+        appleColor=Color.RED;
+    }
+    
+    public void tick() {
+    	
+    	goodCounter++;
+    	if(goodCounter>=500) {
+    		isGood=false;
+    	}
+    	
+    	if(!isGood)
+    		appleColor=Color.GRAY;
+    	
     }
 
 
