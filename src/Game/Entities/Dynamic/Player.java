@@ -197,28 +197,28 @@ public class Player {
         switch (direction){
             case "Left":
                 if(xCoord==0){
-                    kill();
+                    teleport();
                 }else{
                     xCoord--;
                 }
                 break;
             case "Right":
                 if(xCoord==handler.getWorld().GridWidthHeightPixelCount-1){
-                    kill();
+                    teleport();
                 }else{
                     xCoord++;
                 }
                 break;
             case "Up":
                 if(yCoord==0){
-                    kill();
+                    teleport();
                 }else{
                     yCoord--;
                 }
                 break;
             case "Down":
                 if(yCoord==handler.getWorld().GridWidthHeightPixelCount-1){
-                    kill();
+                    teleport();
                 }else{
                     yCoord++;
                 }
@@ -405,16 +405,23 @@ public class Player {
         }
     }
 
-    public void kill(){
-        lenght = 0;
-        // length
-        for (int i = 0; i < handler.getWorld().GridWidthHeightPixelCount; i++) {
-            for (int j = 0; j < handler.getWorld().GridWidthHeightPixelCount; j++) {
-
-                handler.getWorld().playerLocation[i][j]=false;
-
-            }
-        }
+    public void teleport(){
+    	
+    	switch(direction) {
+    	
+    	case "Up":
+    		yCoord=handler.getWorld().GridWidthHeightPixelCount-1;
+    		break;
+    	case "Down":
+    		yCoord=0;
+    		break;
+    	case "Left":
+    		xCoord=handler.getWorld().GridWidthHeightPixelCount-1;
+    		break;
+    	case "Right":
+    		xCoord=0;
+    	}
+    	
     }
 
     public boolean isJustAte() {
