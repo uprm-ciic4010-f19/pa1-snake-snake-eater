@@ -405,11 +405,15 @@ public class Player {
 			handler.getWorld().playerLocation[tail.x][tail.y] = true;
 
 		}else {
-
 			handler.getWorld().appleLocation[xCoord][yCoord]=false;
-			handler.getWorld().appleOnBoard=false;
-			score=score-6;
-
+            handler.getWorld().appleOnBoard=false;
+            score=score-6;
+    		
+            if(!handler.getWorld().body.isEmpty()) {
+            	handler.getWorld().playerLocation[handler.getWorld().body.getLast().x][handler.getWorld().body.getLast().y]=false;
+            	handler.getWorld().body.removeLast();
+            	
+            }
 		}
 	}
 
